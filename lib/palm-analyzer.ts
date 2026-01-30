@@ -9,7 +9,11 @@ import fs from 'fs/promises';
 import os from 'os';
 
 export interface AnalysisResult {
-    success: boolean;
+    palm_metrics?: any;
+    life_line?: any;
+    ratio?: any;
+    image_size?: any;
+    success?: boolean;
     fortune?: FortuneResult;
     raw_analysis?: any;
     error?: string;
