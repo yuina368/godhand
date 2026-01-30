@@ -123,25 +123,20 @@ export default function HomePage() {
       {/* How It Works */}
       <section className="relative z-10 container mx-auto px-6 py-20">
         <h2 className="text-4xl font-bold text-center mb-16">
-          <span className="text-gradient">3つのステップ</span>で簡単占い
+          <span className="text-gradient">簡単2ステップ</span>で運命診断
         </h2>
 
         <div className="max-w-4xl mx-auto space-y-12">
           {[
             {
               step: '01',
-              title: 'マーカーで印をつける',
-              desc: '青色マーカーを人差し指に、緑色マーカーで生命線をなぞります',
+              title: '手のひらを撮影',
+              desc: '明るい場所で手のひら全体がはっきり見えるように撮影してください',
             },
             {
               step: '02',
-              title: '手のひらを撮影',
-              desc: '明るい場所で手のひら全体が写るように撮影してください',
-            },
-            {
-              step: '03',
-              title: 'AIが解析',
-              desc: '数秒で詳細な運勢レポートが完成します',
+              title: 'AIが自動解析',
+              desc: '数秒で生命線を読み取り、詳細な運勢レポートを生成します',
             },
           ].map((item, index) => (
             <motion.div

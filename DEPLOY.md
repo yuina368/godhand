@@ -1,6 +1,5 @@
 # 手相AI Premium - デプロイガイド
 
-## Renderへのデプロイ手順
 
 ### 1. GitHubリポジトリ作成
 
