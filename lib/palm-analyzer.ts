@@ -59,46 +59,5 @@ export async function analyzePalm(imageBuffer: Buffer): Promise<AnalysisResult> 
 }
 
 function callPythonAnalyzer(imagePath: string): Promise<AnalysisResult> {
-    return new Promise((resolve, reject) => {
-        const pythonDir = path.join(process.cwd(), 'python');
-        const scriptPath = path.join(pythonDir, 'analyze_cli.py');
-
-        // Check if Python3 is available
-        const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
-
-        const python = spawn(pythonCmd, [scriptPath, imagePath], {
-            cwd: pythonDir,
-        });
-
-        let stdoutData = '';
-        let stderrData = '';
-
-        python.stdout.on('data', (data) => {
-            stdoutData += data.toString();
-        });
-
-        python.stderr.on('data', (data) => {
-            stderrData += data.toString();
-        });
-
-        python.on('close', (code) => {
-            if (code !== 0) {
-                console.error('Python stderr:', stderrData);
-                reject(new Error(`Python script failed with code ${code}: ${stderrData}`));
-                return;
-            }
-
-            try {
-                const result = JSON.parse(stdoutData);
-                resolve(result);
-            } catch (error) {
-                console.error('Failed to parse Python output:', stdoutData);
-                reject(new Error('Failed to parse analysis result'));
-            }
-        });
-
-        python.on('error', (error) => {
-            reject(new Error(`Failed to spawn Python process: ${error.message}`));
-        });
-    });
+});
 }
