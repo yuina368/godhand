@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python virtual environment
+venv/
+.venv/
+env/
+palm-api/venv/
+
+# build caches
+nextjs-app/.next/
+nextjs-app/node_modules/
+
+# WiFi Driver (too large for deployment)
+rtl88x2BU_WiFi_linux_v5.2.4.4_25643.20171212_COEX20171012-5044/
